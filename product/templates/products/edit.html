@@ -1,0 +1,20 @@
+{% extends 'products/base.html' %}
+{% block title %} Edit Product {% endblock  %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="border">
+                <h3>Edit  Product </h3>
+                <hr>
+                <form action="{% url 'update_product' products.id %}" method="post" >
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <input type="submit"class="btn btn-success" value="edit product">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
